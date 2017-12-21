@@ -1,0 +1,35 @@
+{
+  "gitbook": ">=3.2.0",
+  "description": "Rust语言学习笔记",
+  "language": "zh-hans",
+  "author": "Sky Ao",
+  "extension": null,
+  "generator": "site",
+  "links" : {
+    "sidebar" : {
+        "Sky@Gitbook": "https://skyao.gitbooks.io"
+    }
+  },
+  "structure" : {
+    },
+  "plugins": [
+    "-search",
+    "-sharing",
+    "edit-link",
+    "github-buttons@2.1.0"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+        "base": "https://github.com/skyao/learning-rust/edit/master",
+        "label": "Edit"
+    },
+    "github-buttons": {
+        "repo": "skyao/learning-rust",
+        "types": ["star"],
+        "size": "small"
+    }
+  },
+  "title": "Rust语言学习笔记",
+  "variables": {
+  }
+}
