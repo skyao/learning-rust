@@ -80,5 +80,18 @@ $> rustc --version
 rustc 1.22.1 (05e2e1c41 2017-11-22)
 ```
 
+## 安装openssl
 
+如果compile时报错，找不到openssl：
+
+```bash
+cargo:rerun-if-env-changed=OPENSSL_DIR
+run pkg_config fail: "`\"pkg-config\" \"--libs\" \"--cflags\" \"openssl\"` did not exit successfully: exit code: 1\n--- stderr\nPackage openssl was not found in the pkg-config search path.\nPerhaps you should add the directory containing `openssl.pc\'\nto the PKG_CONFIG_PATH environment variable\nNo package \'openssl\' found\n"
+```
+
+执行下列命令即可：
+
+```bash
+sudo apt-get install pkg-config libssl-dev
+```
 
