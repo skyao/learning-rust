@@ -70,6 +70,81 @@ let a = [1, 2, 3, 4, 5];
 let x = a.0;
 ```
 
+## 函数
+
+- 关键字:fn
+- 函数名：snake case，所有字母都是小写并使用下划线分隔单词
+- 参数：在函数签名中，必须声明每个参数的类型。
+
+### 语句和表达式
+
+- 语句（Statements）是执行一些操作但不返回值的指令。
+- 表达式（Expressions）计算并产生一个值。
+
+注意：表达式并不包含结尾的分号。如果在表达式的结尾加上分号，他就变成了语句，这也就使其不返回一个值。
+
+## 注释
+
+只有一种注释方式？
+
+```rust
+// Hello, world.
+```
+
+## 控制流
+
+### 判断
+
+```rust
+if number < 5 {
+    println!("condition was true");
+} else {
+    println!("condition was false");
+}
+```
+
+- if 后面的表达式，不用加括号
+- if 后面的表达式，只能是`bool`
+
+### 循环
+
+#### loop循环
+
+loop 关键字告诉Rust一遍又一遍的执行一段代码直到你明确要求停止。配合if和break实现跳出循环。
+
+```rust
+loop {
+    println!("again!");
+    if x {
+        break;
+    }
+}
+```
+
+#### while循环
+
+while等同于loop+if+break。
+
+```rust
+let mut number = 3;
+while number != 0 {
+    println!("{}!", number);
+
+    number = number - 1;
+}
+```
+
+#### for循环
+
+for循环来对一个集合的每个元素执行一些代码，来作为一个更有效率的替代
+
+```rust
+let a = [10, 20, 30, 40, 50];
+
+for element in a.iter() {
+    println!("the value is: {}", element);
+}
+```
 
 
 

@@ -7,3 +7,4 @@
 	* [IDE支持：Idea](installation/idea.md)
 * [语法](grammar/index.md)
 	* [基础语法](grammar/basic.md)
+	* [所有权](grammar/ownership.md)
