@@ -1,6 +1,28 @@
 # windows安装
 
-## 安装
+## 安装vs2015
+
+在安装rust之前，windows平台上需要先安装 Microsoft C++ build tools，推荐2015版本。不过不安装，后面在编译时，会报错说"link.exe"无法找到。
+
+```bash
+note: the msvc targets depend on the msvc linker but `link.exe` was not found
+
+note: please ensure that VS 2013 or VS 2015 was installed with the Visual C++ option
+
+error: aborting due to previous error
+
+error: Could not compile `ws2_32-sys`
+```
+
+打开下面的网站：
+
+http://landinghub.visualstudio.com/visual-cpp-build-tools
+
+选择"Download Visual C++ Build Tools 2015"。
+
+下载之后按照提示一路安装即可。
+
+## 安装rust
 
 操作系统为windows 10 64位。
 
@@ -8,21 +30,6 @@
 
 ```bash
 Rust Visual C++ prerequisites
-
-Rust requires the Microsoft C++ build tools for Visual Studio 2013 or later,
-but they don't seem to be installed.
-
-The easiest way to acquire the build tools is by installing Microsoft Visual
-C++ Build Tools 2015 which provides just the Visual C++ build tools:
-
-  http://landinghub.visualstudio.com/visual-cpp-build-tools
-
-Alternately, you can install Visual Studio 2015 or Visual Studio 2013 and
-during install select the "C++ tools":
-
-  https://www.visualstudio.com/downloads/
-
-Install the C++ build tools before proceeding.
 
 If you will be targeting the GNU ABI or otherwise know what you are doing then
 it is fine to continue installation without the build tools, but otherwise,
