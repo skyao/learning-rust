@@ -146,5 +146,47 @@ for element in a.iter() {
 }
 ```
 
+## 结构体
+
+结构体需要命名各部分数据以便能清楚的表明其值的意义，不需要依赖顺序来指定或访问实例中的值。
+
+定义结构体：
+
+```rust
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+```
+
+创建实例：
+
+```rust
+let user1 = User {
+    email: String::from("someone@example.com"),
+    username: String::from("someusername123"),
+    active: true,
+    sign_in_count: 1,
+};
+```
+
+定义方法：
+
+```rust
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.length * self.width
+    }
+}
+```
+
+
+
+
+
+
+
 
 
