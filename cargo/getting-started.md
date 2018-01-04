@@ -41,6 +41,13 @@ authors = ["Sky Ao <aoxiaojian@gmail.com>"]
 
 更多详细信息，请见 [The Manifest Format](http://doc.crates.io/manifest.html#the-project-layout)
 
+cargo自动生成了.git目录，提交修改之后，可以通过下列命令推送到远程仓库：
+
+```bash
+git remote add origin git@github.com:***/***.git
+git push -u origin master
+```
+
 ## 编译运行
 
 ```bash
