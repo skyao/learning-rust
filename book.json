@@ -1,13 +1,13 @@
 {
   "gitbook": ">=3.2.0",
-  "description": "Rust语言学习笔记",
+  "description": "Rust学习笔记",
   "language": "zh-hans",
-  "author": "Sky Ao",
+  "author": "敖小剑",
   "extension": null,
   "generator": "site",
   "links" : {
     "sidebar" : {
-        "Sky@Gitbook": "https://skyao.gitbooks.io"
+        "敖小剑的博客": "https://skyao.io"
     }
   },
   "structure" : {
@@ -29,7 +29,7 @@
         "size": "small"
     }
   },
-  "title": "Rust语言学习笔记",
+  "title": "Rust学习笔记",
   "variables": {
   }
 }
