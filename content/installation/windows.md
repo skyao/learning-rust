@@ -1,8 +1,18 @@
-# windows安装
+---
+date: 2019-03-03T21:00:00+08:00
+title: Windows安装
+menu:
+  main:
+    parent: "installation"
+weight: 202
+description : "在Windows上安装Rust"
+---
 
-## 安装vs2015
+### 安装vs2015
 
-在安装rust之前，windows平台上需要先安装 Microsoft C++ build tools，推荐2015版本。不过不安装，后面在编译时，会报错说"link.exe"无法找到。
+TBD: 下次验证，参考 https://rustlang-cn.org/office/rust/book/getting-started/ch01-01-installation.html
+
+在安装rust之前，windows平台上需要先安装 Microsoft C++ build tools，推荐2015版本。如果不安装，后面在编译时，会报错说"link.exe"无法找到。
 
 ```bash
 note: the msvc targets depend on the msvc linker but `link.exe` was not found
@@ -22,7 +32,7 @@ http://landinghub.visualstudio.com/visual-cpp-build-tools
 
 下载之后按照提示一路安装即可。
 
-## 安装rust
+### windows安装rust
 
 操作系统为windows 10 64位。
 
@@ -77,15 +87,11 @@ correct environment, but you may need to restart your current shell.
 Press the Enter key to continue.
 ```
 
-## 配置
-
 将 `%USERPROFILE%\.cargo\bin` 加入到PATH环境变量中。
 
-## 验证
-
-执行`rustc --version`：
+验证安装，执行`rustc --version`：
 
 ```bash
 $> rustc --version
-rustc 1.22.1 (05e2e1c41 2017-11-22)
+rustc 1.33.0 (2aa4c46cf 2019-02-28) 
 ```
