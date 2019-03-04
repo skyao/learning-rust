@@ -24,7 +24,7 @@ intellij-rust 网站：
 https://intellij-rust.github.io/
 
 - [QUICK START](https://intellij-rust.github.io/docs/quick-start.html)
-- [FEATURES](https://intellij-rust.github.io/features/): 详细介绍 intellij-rust 的特性和使用方式 （TBD：详细过一遍）
+- [FEATURES](https://intellij-rust.github.io/features/): 详细介绍 intellij-rust 的特性和使用方式 
 
 ## CLion
 
