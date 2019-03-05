@@ -69,6 +69,26 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	url    = "/installation/"
 	weight = 200
 
+[[menu.main]]
+	name   = "语法"
+	identifier = "grammar"
+	url    = "/grammar/"
+	weight = 300
+
+[[menu.main]]
+	name   = "基本语法"
+	identifier = "grammar-basic"
+	parent = "grammar"
+	url    = "/grammar/basic/"
+	weight = 310
+
+[[menu.main]]
+	name   = "数据类型"
+	identifier = "grammar-type"
+	parent = "grammar"
+	url    = "/grammar/type/"
+	weight = 320
+
 [blackfriday]
 	smartypants	= true
 	fractions = true

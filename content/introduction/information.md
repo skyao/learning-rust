@@ -43,7 +43,7 @@ https://github.com/rustlang-cn/resourses/tree/master/books
 
 ### The Rust Programming Language
 
-官方书籍"The Rust Programming Language", 有[第一版](https://doc.rust-lang.org/stable/book/first-edition/)和[第二版](https://doc.rust-lang.org/stable/book/second-edition/)。其中第一版已经过时，第二版几乎是重写。这本书网上有电子版可以[下载](http://www.allitebooks.com/the-rust-programming-language/)。
+官方书籍"The Rust Programming Language", 有[第一版](https://doc.rust-lang.org/stable/book/first-edition/)和[第二版](https://doc.rust-lang.org/stable/book/index.html)。其中第一版已经过时，第二版几乎是重写。这本书网上有电子版可以[下载](http://www.allitebooks.com/the-rust-programming-language/)。
 
 "The Rust Programming Language"中文翻译版本, [第一版翻译](https://kaisery.gitbooks.io/rust-book-chinese/content/)和[第二版翻译](https://rustlang-cn.org/office/rust/book/)。
 
