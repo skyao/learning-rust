@@ -11,13 +11,13 @@ Rust 是 **静态类型**（*statically typed*）语言，在编译时必须知�
 
 两类数据类型子集：标量（scalar）和复合（compound）
 
-## 标量类型
+### 标量类型
 
 **标量**（*scalar*）类型代表一个单独的值。
 
 Rust 有四种基本的标量类型：整型(integers)、浮点型(floating-point numbers)、布尔类型(Booleans)和字符(characters)类型。
 
-##复合类型
+### 复合类型
 
 **复合类型**（*Compound types*）可以将多个值组合成一个类型。
 
