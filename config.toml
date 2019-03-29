@@ -89,6 +89,33 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	url    = "/grammar/type/"
 	weight = 320
 
+[[menu.main]]
+	name   = "字符串"
+	identifier = "grammar-string"
+	parent = "grammar"
+	url    = "/grammar/string/"
+	weight = 340
+
+[[menu.main]]
+	name   = "集合"
+	identifier = "grammar-collection"
+	parent = "grammar"
+	url    = "/grammar/collection/"
+	weight = 350
+
+[[menu.main]]
+	name   = "指针"
+	identifier = "grammar-pointer"
+	parent = "grammar"
+	url    = "/grammar/pointer/"
+	weight = 360
+
+[[menu.main]]
+	name   = "所有权"
+	identifier = "ownership"
+	url    = "/ownership/"
+	weight = 1000
+
 [blackfriday]
 	smartypants	= true
 	fractions = true
