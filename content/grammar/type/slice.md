@@ -1,6 +1,6 @@
 ---
 date: 2019-03-26T07:00:00+08:00
-title: Slice切片
+title: 切片(Slice)
 menu:
   main:
     parent: "grammar-type"

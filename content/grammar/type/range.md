@@ -1,6 +1,6 @@
 ---
 date: 2019-03-26T07:00:00+08:00
-title: Range
+title: 范围（Range）
 menu:
   main:
     parent: "grammar-type"

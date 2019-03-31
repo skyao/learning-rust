@@ -111,6 +111,40 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	weight = 360
 
 [[menu.main]]
+	name   = "流程控制"
+	identifier = "grammar-flowcontrol"
+	parent = "grammar"
+	url    = "/grammar/flowcontrol/"
+	weight = 370
+
+[[menu.main]]
+	name   = "类型系统"
+	identifier = "type"
+	url    = "/type/"
+	weight = 400
+
+[[menu.main]]
+	name   = "泛型"
+	identifier = "type-generic"
+	parent = "type"
+	url    = "/type/generic/"
+	weight = 420
+
+[[menu.main]]
+	name   = "Trait"
+	identifier = "type-trait"
+	parent = "type"
+	url    = "/type/trait/"
+	weight = 440
+
+[[menu.main]]
+	name   = "类型转换"
+	identifier = "type-convert"
+	parent = "type"
+	url    = "/type/convert/"
+	weight = 460
+
+[[menu.main]]
 	name   = "所有权"
 	identifier = "ownership"
 	url    = "/ownership/"
