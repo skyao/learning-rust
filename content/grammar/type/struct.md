@@ -128,3 +128,12 @@ assert_eq!((..), std::ops::RangeFull); //  RangeFull就是(..)，表示全范围
 单元结构体和  new type 模式类似，也相当于定义了一个新的类型。
 
 单元结构体一般用于特定场景，标准库源码中RangeFull就是一个单元结构体。
+
+### 参考资料
+
+视频：
+
+- [Rust: Structs](https://www.youtube.com/watch?v=jE-nqgIoN9o)
+- [Rust Structs by Example Part 1](https://www.youtube.com/watch?v=WZYnqJ37QcI)
+- [Rust Structs by Example Part 2](https://www.youtube.com/watch?v=tEg0PlC7Fqs)
+

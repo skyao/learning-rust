@@ -55,3 +55,10 @@ let home = IpAddr::V4(127, 0, 0, 1);
 - fn(u8, u8, u8, u8) -> IpAddr
 - fn(String) -> IpAddr
 
+### 参考资料
+
+视频：
+
+- [Rust Enums Part 1: Introduction](https://www.youtube.com/watch?v=TBixFUJDnRI)
+- [Rust Enums part 2: Match & Option](https://www.youtube.com/watch?v=o8bFFwRUEAE)
+- [Rust Enums Part 3: if let (Syntax)](https://www.youtube.com/watch?v=sWTu4Lm49Kw)
