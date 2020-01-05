@@ -4,7 +4,7 @@ title: 链表(LinkedList)
 menu:
   main:
     parent: "grammar-collection"
-weight: 373
+weight: 353
 description : "Rust中的双端队列"
 ---
 

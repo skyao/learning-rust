@@ -4,7 +4,7 @@ title: 优先队列(BinaryHeap)
 menu:
   main:
     parent: "grammar-collection"
-weight: 377
+weight: 357
 description : "Rust中的集合"
 ---
 

@@ -16,6 +16,7 @@ description : "Rust信息"
 ## 社区
 
 - [Rust官方社区](https://www.rust-lang.org/community)
+- [Rust官方社区的中文区](https://www.rust-lang.org/zh-CN/): 
 - [Rust中文](https://rustlang-cn.org/)：非常新的Rust社区，有很多内容，而且更新维护很给力。
 
 ## 文档
@@ -68,8 +69,12 @@ https://github.com/rustlang-cn/resourses/tree/master/books
 
 https://github.com/rust-unofficial/awesome-rust
 
-最齐全的Rust资料列表，但是好像两年没更新了？
+最齐全的Rust资料列表
 
 Rust中文社区的 Awesome Rust：
 
 https://rustlang-cn.org/resourse/awesome/
+
+### 资源介绍文章
+
+- [一些有用的关于Rust的网站和repo](https://dengjianping.github.io/2019/06/12/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%85%B3%E4%BA%8ERust%E7%9A%84%E7%BD%91%E7%AB%99%E5%92%8Crepo.html)

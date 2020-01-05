@@ -4,7 +4,7 @@ title: 双端队列(VecDeque)
 menu:
   main:
     parent: "grammar-collection"
-weight: 372
+weight: 352
 description : "Rust中的双端队列"
 ---
 

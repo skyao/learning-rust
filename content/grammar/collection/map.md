@@ -4,7 +4,7 @@ title: 映射(Map)
 menu:
   main:
     parent: "grammar-collection"
-weight: 374
+weight: 354
 description : "Rust中的映射"
 ---
 
