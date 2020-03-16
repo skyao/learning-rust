@@ -70,6 +70,33 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	weight = 200
 
 [[menu.main]]
+	name   = "构建"
+	identifier = "build"
+	url    = "/build/"
+	weight = 250
+
+[[menu.main]]
+	name   = "Rustc"
+	identifier = "build-rustc"
+	parent = "build"
+	url    = "/build/rustc/"
+	weight = 260
+
+[[menu.main]]
+	name   = "Cargo"
+	identifier = "build-cargo"
+	parent = "build"
+	url    = "/build/cargo/"
+	weight = 270
+
+[[menu.main]]
+	name   = "Lints"
+	identifier = "build-lints"
+	parent = "build"
+	url    = "/build/lints/"
+	weight = 280
+
+[[menu.main]]
 	name   = "语法"
 	identifier = "grammar"
 	url    = "/grammar/"

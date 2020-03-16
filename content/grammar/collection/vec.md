@@ -4,7 +4,7 @@ title: 向量(Vec)
 menu:
   main:
     parent: "grammar-collection"
-weight: 371
+weight: 351
 description : "Rust中的向量"
 ---
 

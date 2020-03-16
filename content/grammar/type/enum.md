@@ -10,7 +10,7 @@ description : "Rust中的枚举"
 
 枚举用 enum 关键字定义，有三种类型。
 
-###无参数枚举体 
+### 无参数枚举体 
 
 ```rust
 enum Number {
