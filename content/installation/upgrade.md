@@ -32,10 +32,57 @@ TBD：不确认新版本是否还有这个问题，下次升级版本时再试�
 $ rustup update
 ```
 
+尝试在mac下从 1.40 升级到 1.42 成功，输出如下：
+
+```bash
+$ rustup update
+info: syncing channel updates for 'stable-x86_64-apple-darwin'
+463.3 KiB / 463.3 KiB (100 %) 414.2 KiB/s in  1s ETA:  0s
+info: latest update on 2020-03-12, rust version 1.42.0 (b8cedc004 2020-03-09)
+info: downloading component 'rust-src'
+  2.2 MiB /   2.2 MiB (100 %) 313.6 KiB/s in  8s ETA:  0s
+info: downloading component 'cargo'
+  3.7 MiB /   3.7 MiB (100 %) 321.3 KiB/s in 14s ETA:  0s
+info: downloading component 'clippy'
+  1.3 MiB /   1.3 MiB (100 %) 327.7 KiB/s in  5s ETA:  0s
+info: downloading component 'rust-docs'
+ 12.1 MiB /  12.1 MiB (100 %) 323.2 KiB/s in 43s ETA:  0s
+info: downloading component 'rust-std'
+ 16.1 MiB /  16.1 MiB (100 %) 345.6 KiB/s in  1m  3s ETA:  0s
+info: downloading component 'rustc'
+ 54.5 MiB /  54.5 MiB (100 %) 342.4 KiB/s in  4m 20s ETA:  0s    
+info: downloading component 'rustfmt'
+  1.9 MiB /   1.9 MiB (100 %) 288.0 KiB/s in  7s ETA:  0s
+info: removing previous version of component 'rust-src'
+info: removing previous version of component 'cargo'
+info: removing previous version of component 'clippy'
+info: removing previous version of component 'rust-docs'
+info: removing previous version of component 'rust-std'
+info: removing previous version of component 'rustc'
+info: removing previous version of component 'rustfmt'
+info: installing component 'rust-src'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+ 12.1 MiB /  12.1 MiB (100 %)   8.6 MiB/s in  1s ETA:  0s
+info: installing component 'rust-std'
+info: installing component 'rustc'
+ 54.5 MiB /  54.5 MiB (100 %)  18.3 MiB/s in  3s ETA:  0s
+info: installing component 'rustfmt'
+info: checking for self-updates
+
+  stable-x86_64-apple-darwin updated - rustc 1.42.0 (b8cedc004 2020-03-09) (from rustc 1.40.0 (73528e339 2019-12-16))
+
+info: cleaning up downloads & tmp directories
+```
+
+
+
 如果要卸载 Rust 和 `rustup`，运行如下卸载脚本:
 
 ```
 $ rustup self uninstall
 ```
 
-TBD：下次验证
+
+

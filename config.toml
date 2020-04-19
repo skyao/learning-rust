@@ -97,6 +97,13 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	weight = 280
 
 [[menu.main]]
+	name   = "模块"
+	identifier = "build-module"
+	parent = "build"
+	url    = "/build/module/"
+	weight = 290
+
+[[menu.main]]
 	name   = "语法"
 	identifier = "grammar"
 	url    = "/grammar/"
@@ -176,6 +183,26 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	identifier = "ownership"
 	url    = "/ownership/"
 	weight = 1000
+
+[[menu.main]]
+	name   = "标准库"
+	identifier = "std"
+	url    = "/std/"
+	weight = 2000
+
+[[menu.main]]
+	name   = "集合"
+	identifier = "std-collections"
+	parent = "std"
+	url    = "/std/collections/"
+	weight = 2010
+
+[[menu.main]]
+	name   = "同步"
+	identifier = "std-sync"
+	parent = "std"
+	url    = "/std/sync/"
+	weight = 2020
 
 [blackfriday]
 	smartypants	= true
