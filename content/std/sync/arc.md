@@ -1,6 +1,6 @@
 ---
 date: 2019-04-06T16:00:00+08:00
-title: Arc
+title: Arc/原子引用计数
 menu:
   main:
     parent: "std-sync"
