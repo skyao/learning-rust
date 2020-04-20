@@ -202,7 +202,7 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	identifier = "std-sync"
 	parent = "std"
 	url    = "/std/sync/"
-	weight = 2020
+	weight = 2030
 
 [blackfriday]
 	smartypants	= true
