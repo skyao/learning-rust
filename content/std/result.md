@@ -189,3 +189,50 @@ fn write_info(info: &Info) -> io::Result<()> {
 以 ? 结束的表达式将导致成功(Ok)值的 unwrap，除非结果是Err，在这种情况下，Err会从包围函数中提前返回。
 
 ?只能用于返回 Result 的函数中，因为它提供了 Err 的提前返回。
+
+## Result Enum
+
+```rust
+#[must_use = "this `Result` may be an `Err` variant, which should be handled"]
+pub enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
+Result是一种类型，代表成功（Ok）或失败（Err）。
+
+变量：
+
+- Ok(T)： 包含成功值
+- Err(E)：包含错误值
+
+### map_or 方法
+
+对包含的值(如果有的话)应用一个函数，或者返回提供的默认值(如果没有的话)。
+
+传递给map_or的参数会被立即求值；如果你传递的是函数调用的结果，建议使用map_or_else，它是延迟求值。
+
+```rust
+let x: Result<_, &str> = Ok("foo");
+assert_eq!(x.map_or(42, |v| v.len()), 3);
+
+let x: Result<&str, _> = Err("bar");
+assert_eq!(x.map_or(42, |v| v.len()), 42);
+```
+
+### map_or_else方法
+
+通过将一个结果<T, E>映射到U，通过将一个函数应用到包含的Ok值，或者将一个fallback函数应用到包含的Err值。
+
+这个函数可以用来在处理错误时解包一个成功的结果。
+
+```rust
+let k = 21;
+
+let x : Result<_, &str> = Ok("foo");
+assert_eq!(x.map_or_else(|e| k * 2, |v| v.len()), 3);
+
+let x : Result<&str, _> = Err("bar");
+assert_eq!(x.map_or_else(|e| k * 2, |v| v.len()), 42);
+```
