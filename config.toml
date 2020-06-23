@@ -204,6 +204,14 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	url    = "/std/sync/"
 	weight = 2030
 
+
+[[menu.main]]
+	name   = "Async"
+	identifier = "std-async"
+	parent = "std"
+	url    = "/std/async/"
+	weight = 2050
+
 [blackfriday]
 	smartypants	= true
 	fractions = true
