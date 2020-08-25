@@ -127,7 +127,28 @@ impl PartialEq for CaseInsensitiveString {
 impl Eq for CaseInsensitiveString { }
 ```
 
+因为两个相等的值需要产生相同的散列值，所以Hash的实现也需要忽略ASCII 大小写：
 
+```rust
+impl Hash for CaseInsensitiveString {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        for c in self.0.as_bytes() {
+            c.to_ascii_lowercase().hash(state)
+        }
+    }
+}
+```
 
+CaseInsensitiveString可以实现Borrow<str>吗？当然可以，它当然可以通过它所包含的自有字符串来提供对字符串片的引用。但由于它的Hash实现不同，它的行为方式与str不同，因此事实上不能实现Borrow<str>。如果它想允许别人访问底层的str，可以通过AsRef<str>来实现，而AsRef<str>没有任何额外的要求。
 
+### BorrowMut Trait
 
+用于可变地借用数据的特征。
+
+作为 Borrow<T> 的附属属性，该特征允许一个类型通过提供一个可变的引用来借用作为底层类型。关于作为另一个类型借入的更多信息，请参阅 Borrow<T>。
+
+### ToOwned Trait
+
+用于借用数据的Clone泛化。
+
+一些类型使其可以从借用数据到拥有数据，通常是通过实现Clone特征。但Clone只适用于从&T到T。ToOwned特征将Clone泛化为从给定类型的任何借入数据中构造出拥有的数据。

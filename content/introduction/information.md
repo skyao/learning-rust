@@ -75,6 +75,14 @@ Rust中文社区的 Awesome Rust：
 
 https://rustlang-cn.org/resourse/awesome/
 
+### 值得新手关注的Rust项目
+
+适用于新手学习rust的项目有：
+
+- [mini redis](https://github.com/tokio-rs/mini-redis)
+- [async-graphql](https://github.com/sunli829/async-graphql)
+
 ### 资源介绍文章
 
 - [一些有用的关于Rust的网站和repo](https://dengjianping.github.io/2019/06/12/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E5%85%B3%E4%BA%8ERust%E7%9A%84%E7%BD%91%E7%AB%99%E5%92%8Crepo.html)
+
