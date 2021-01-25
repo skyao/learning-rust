@@ -4,5 +4,5 @@ public/
 resources/
 node_modules/
 node_modules
-tech-doc-hugo
 themes/
+init_docsy.sh
