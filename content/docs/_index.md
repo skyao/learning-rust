@@ -1,12 +1,10 @@
-
 ---
 title: "Hugo学习笔记"
-linkTitle: "Hugo学习笔记"
+linkTitle: "学习笔记"
 weight: 1
 date: 2021-01-18
 menu:
   main:
-
     weight: 20
 ---
 
