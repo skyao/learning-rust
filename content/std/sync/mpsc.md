@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: mpsc
-menu:
-  main:
-    parent: "std-sync"
-weight: 2034
-description : "Rust标准库中的mpsc"
+type: docs
+title: "Rust标准库中的多生产者单消费者队列(mpsc)"
+linkTitle: "多生产者单消费者队列(mpsc)"
+weight: 350
+date: 2021-04-02
+description: Rust标准库中的多生产者单消费者队列(mpsc)
 ---
 
 https://doc.rust-lang.org/std/sync/mpsc/index.html

@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: RwLock/读写锁
-menu:
-  main:
-    parent: "std-sync"
-weight: 2037
-description : "Rust标准库中的RwLock"
+type: docs
+title: "Rust标准库中的读写锁(RwLock)"
+linkTitle: "读写锁(RwLock)"
+weight: 380
+date: 2021-04-02
+description: Rust标准库中的读写锁(RwLock)
 ---
 
 https://doc.rust-lang.org/std/sync/struct.RwLock.html

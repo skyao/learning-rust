@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: 原子类型
-menu:
-  main:
-    parent: "std-sync"
-weight: 2031
-description : "Rust标准库中的原子类型"
+type: docs
+title: "Rust标准库中的原子类型"
+linkTitle: "原子类型"
+weight: 310
+date: 2021-04-02
+description: Rust标准库中的原子类型
 ---
 
 https://doc.rust-lang.org/std/sync/atomic/index.html

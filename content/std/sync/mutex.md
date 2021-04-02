@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: Mutex/互斥
-menu:
-  main:
-    parent: "std-sync"
-weight: 2035
-description : "Rust标准库中的Mutex"
+type: docs
+title: "Rust标准库中的互斥(Mutex)"
+linkTitle: "互斥(Mutex)"
+weight: 360
+date: 2021-04-02
+description: Rust标准库中的互斥(Mutex)
 ---
 
 https://doc.rust-lang.org/std/sync/struct.Mutex.html

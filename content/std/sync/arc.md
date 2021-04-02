@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: Arc/原子引用计数
-menu:
-  main:
-    parent: "std-sync"
-weight: 2032
-description : "Rust标准库中的Arc"
+type: docs
+title: "Rust标准库中的原子引用计数(Arc)"
+linkTitle: "原子引用计数(Arc)"
+weight: 320
+date: 2021-04-02
+description: Rust标准库中的原子引用计数(Arc)
 ---
 
 https://doc.rust-lang.org/std/sync/struct.Arc.html

@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: Once/一次性
-menu:
-  main:
-    parent: "std-sync"
-weight: 2036
-description : "Rust标准库中的Once"
+type: docs
+title: "Rust标准库中的一次性(Once)"
+linkTitle: "一次性(Once)"
+weight: 370
+date: 2021-04-02
+description: Rust标准库中的一次性(Once)
 ---
 
 https://doc.rust-lang.org/std/sync/struct.Once.html

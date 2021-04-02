@@ -1,11 +1,10 @@
 ---
-date: 2019-04-06T16:00:00+08:00
-title: Condvar/条件变量
-menu:
-  main:
-    parent: "std-sync"
-weight: 2034
-description : "Rust标准库中的Barrier"
+type: docs
+title: "Rust标准库中的条件变量(Condvar)"
+linkTitle: "条件变量(Condvar)"
+weight: 340
+date: 2021-04-02
+description: Rust标准库中的条件变量(Condvar)
 ---
 
 https://doc.rust-lang.org/std/sync/struct.Condvar.html
