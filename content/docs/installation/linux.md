@@ -96,7 +96,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 ```bash
 $ rustc --version
-rustc 1.33.0 (2aa4c46cf 2019-02-28)
+rustc 1.52.1 (9bc8c42bb 2021-05-09)
 ```
 
 ### Openssl问题
@@ -125,4 +125,19 @@ sudo apt-get install pkg-config libssl-dev
 
 https://askubuntu.com/questions/903496/error-during-upgrade-on-ubuntu-16-04
 
-## 
+### 配置cargo
+
+打开（或创建）文件  `~/.cargo/config`，加入以下内容：
+
+```rust
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+```
+
+参考：
+
+- [rust - How do I debug `cargo build` hanging at "Updating crates.io index"? - Stack Overflow](https://stackoverflow.com/questions/53361052/how-do-i-debug-cargo-build-hanging-at-updating-crates-io-index)
