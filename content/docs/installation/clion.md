@@ -1,10 +1,10 @@
 ---
-title: "Rust的IDE选择和设置"
-linkTitle: "IDE"
+title: "Clion设置"
+linkTitle: "Clion"
 date: 2021-03-29
 weight: 204
 description: >
-  Rust的IDE选择和设置
+  Clion安装和设置
 ---
 
 ## IDE的选择
@@ -29,16 +29,20 @@ https://intellij-rust.github.io/
 
 ### 安装Rust插件
 
-在 `file -> settings -> plugins` 中选择"Marketplace"，然后搜索"rust"和"toml"，分别安装这两个插件。完成后重启。
+在 `Preferences -> plugins` 中选择"Marketplace"，然后搜索"rust"和"toml"，分别安装这两个插件。完成后重启。
+
+参考：[Quick start guide - Rust | JetBrains](https://plugins.jetbrains.com/plugin/8182-rust/docs/rust-quick-start.html)
+
+遇到问题：macos下升级插件版本时发现没有"update"按钮，只好删除再重新安装插件。
 
 ### 安装Rust标准库
 
-在设置中，搜索rust，进入“language & framework”下，在"Standard library"那里选择用rustc下载。
+在  `Preferences` 中，搜索rust，进入 “language & framework” 下，在"Standard library"那里选择用rustc下载。
 
 ### Cargo设置
 
-每个项目的 cargo path 可以通过 `Settings > Languages & Frameworks > Rust` 来设置。
+每个项目的 cargo path 可以通过 `Preferences` > Languages & Frameworks > Rust > Cargo` 来设置。
 
 ### 在CLion中Debug
 
-详细介绍参考：https://github.com/intellij-rust/intellij-rust/issues/535
+详细介绍参考：[Debugging - Rust | JetBrains](https://plugins.jetbrains.com/plugin/8182-rust/docs/rust-debugging.html)
