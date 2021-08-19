@@ -129,7 +129,7 @@ https://askubuntu.com/questions/903496/error-during-upgrade-on-ubuntu-16-04
 
 打开（或创建）文件  `~/.cargo/config`，加入以下内容：
 
-```rust
+```properties
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
 replace-with = 'ustc'
