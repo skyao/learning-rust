@@ -17,6 +17,7 @@ description: >
 - [Rust官方社区](https://www.rust-lang.org/community)
 - [Rust官方社区的中文区](https://www.rust-lang.org/zh-CN/): 
 - [Rust中文](https://rustlang-cn.org/)：非常新的Rust社区，有很多内容，而且更新维护很给力。
+- [Lib.rs](https://lib.rs/): 含有67000个Rust库和应用程序的索引。快速、轻量级、有观点、非官方的crates.io替代品。
 
 ## 文档
 

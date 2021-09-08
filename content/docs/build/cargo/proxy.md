@@ -31,20 +31,20 @@ Host github.com
 HostName github.com
 User git
 # 如果是 HTTP 代理，把下面这行取消注释，并把 proxyport 改成自己的 http 代理的端>口
-#ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=1087
+#ProxyCommand socat - PROXY:127.0.0.1:%h:%p,proxyport=3333
 
-# 如果是 socks5 代理，则把下面这行取消注释，并把 6666 改成自己 socks5 代理的端口
-ProxyCommand nc -v -x 127.0.0.1:11080 %h %p
+# 如果是 socks5 代理，则把下面这行取消注释，并把 23456 改成自己 socks5 代理的端口
+ProxyCommand nc -v -x 127.0.0.1:23456 %h %p
 ```
 
 上面信息中时通过 https 来操作git仓库，所以想着设置 git 的 http 代理，常见的方式是通过 `git config --global` 命令，支持 http 代理和 socks5 代理：
 
 ```bash
 # 使用 http 代理
-git config --global http.proxy http://127.0.0.1:1087
+git config --global http.proxy http://192.168.0.1:3333
 
 # 使用 socks5 代理
-git config --global http.proxy socks5://127.0.0.1:11080
+git config --global http.proxy socks5://192.168.0.1:23456
 ```
 
 可以在 `~/.gitconfig` 中看到设置的结果。
@@ -59,17 +59,17 @@ git config --global http.proxy socks5://127.0.0.1:11080
 
 ```bash
 [http]
-proxy = "127.0.0.1:1087"
+proxy = "192.168.0.1:3333"
 [https]
-proxy = "127.0.0.1:1087"
+proxy = "192.168.0.1:3333"
 ```
 
 使用 socks5代理:
 
 ```bash
 [http]
-proxy = "socks5://127.0.0.1:11080"
+proxy = "socks5://192.168.0.1:23456"
 [https]
-proxy = "socks5://127.0.0.1:11080"
+proxy = "socks5://192.168.0.1:23456"
 ```
 

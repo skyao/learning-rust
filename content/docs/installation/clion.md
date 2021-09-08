@@ -7,41 +7,34 @@ description: >
   Clion安装和设置
 ---
 
-## IDE的选择
+## 下载
 
-- [Rust目前有比较靠谱的IDE吗？](https://www.zhihu.com/question/40914986)： 来自知乎
-- [What IDE do you use?](https://www.reddit.com/r/rust/comments/7vgelh/what_ide_do_you_use/): 来自 reddit
+https://www.jetbrains.com/clion/download/
 
-2018年最好的 Rust IDE 应该是 JetBains 家的 CLion，准确来说是 IntelliJ Rust + CLion的组合。
+## 安装
 
-考虑到个人习惯，一直在用InteliJ 、Goland、CLion 系列，因此选择 intellij-rust尤其是 Clion 就是自然而言的事情。
+### 安装clion
 
-## Intellij Rust
+解压缩安装文件，按照 `Install-Linux-tar.txt` 的提示，执行 
 
-intellij-rust 网站：
+```bash
+cd /bib
+./clion.sh
+```
 
-https://intellij-rust.github.io/
+启动clion界面之后，在左下角点 "Options Menu" 按钮，点 "Create Desktop Entry..." 创建启动菜单。
 
-- [QUICK START](https://intellij-rust.github.io/docs/quick-start.html)
-- [FEATURES](https://intellij-rust.github.io/features/): 详细介绍 intellij-rust 的特性和使用方式 
+### 安装rust和toml插件
 
-## CLion
+在 clion 的 "settings" -> "plugin" 中，安装 Rust 和 toml 两个插件。重启 clion。
 
-### 安装Rust插件
-
-在 `Preferences -> plugins` 中选择"Marketplace"，然后搜索"rust"和"toml"，分别安装这两个插件。完成后重启。
-
-参考：[Quick start guide - Rust | JetBrains](https://plugins.jetbrains.com/plugin/8182-rust/docs/rust-quick-start.html)
-
-遇到问题：macos下升级插件版本时发现没有"update"按钮，只好删除再重新安装插件。
+## 配置
 
 ### 安装Rust标准库
 
-在  `Preferences` 中，搜索rust，进入 “language & framework” 下，在"Standard library"那里选择用rustc下载。
+进入 "settings" -> "language & framework" 下找到 "rust"，在 "Standard library" 那里选择 "Download via Rustup" 下载。
 
-### Cargo设置
-
-每个项目的 cargo path 可以通过 `Preferences` > Languages & Frameworks > Rust > Cargo` 来设置。
+> 备注：如果下载速度慢，建议科学上网。
 
 ### 在CLion中Debug
 

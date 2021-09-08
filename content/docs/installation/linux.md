@@ -12,118 +12,111 @@ description: >
 执行命令：
 
 ```bash
-$ curl https://sh.rustup.rs -sSf | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 然后依照屏幕提示：
 
 ```bash
-$ curl https://sh.rustup.rs -sSf | sh
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 info: downloading installer
 
 Welcome to Rust!
 
-This will download and install the official compiler for the Rust programming 
-language, and its package manager, Cargo.
+This will download and install the official compiler for the Rust
+programming language, and its package manager, Cargo.
 
-It will add the cargo, rustc, rustup and other commands to Cargo's bin 
-directory, located at:
+Rustup metadata and toolchains will be installed into the Rustup
+home directory, located at:
+
+  /home/sky/.rustup
+
+This can be modified with the RUSTUP_HOME environment variable.
+
+The Cargo home directory located at:
+
+  /home/sky/.cargo
+
+This can be modified with the CARGO_HOME environment variable.
+
+The cargo, rustc, rustup and other commands will be added to
+Cargo's bin directory, located at:
 
   /home/sky/.cargo/bin
 
-This path will then be added to your PATH environment variable by modifying the
-profile file located at:
+This path will then be added to your PATH environment variable by
+modifying the profile files located at:
 
   /home/sky/.profile
+  /home/sky/.bashrc
+  /home/sky/.zshenv
 
-You can uninstall at any time with rustup self uninstall and these changes will
-be reverted.
+You can uninstall at any time with rustup self uninstall and
+these changes will be reverted.
 
 Current installation options:
 
+
    default host triple: x86_64-unknown-linux-gnu
-     default toolchain: stable
+     default toolchain: stable (default)
+               profile: default
   modify PATH variable: yes
 
 1) Proceed with installation (default)
 2) Customize installation
 3) Cancel installation
 >1
-
 ```
 
 这里选择1默认模式，继续：
 
 ```bash
+info: profile set to 'default'
+info: default host triple is x86_64-unknown-linux-gnu
 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
-320.9 KiB / 320.9 KiB (100 %)  87.5 KiB/s ETA:   0 s                
-info: latest update on 2019-02-28, rust version 1.33.0 (2aa4c46cf 2019-02-28)
-info: downloading component 'rustc'
- 84.7 MiB /  84.7 MiB (100 %)   1.2 MiB/s ETA:   0 s                 [[1;7C
-info: downloading component 'rust-std'
- 56.8 MiB /  56.8 MiB (100 %)   1.2 MiB/s ETA:   0 s                 
+info: latest update on 2021-07-29, rust version 1.54.0 (a178d0322 2021-07-26)
 info: downloading component 'cargo'
-  4.4 MiB /   4.4 MiB (100 %) 1011.8 KiB/s ETA:   0 s                
+info: downloading component 'clippy'
 info: downloading component 'rust-docs'
-  8.5 MiB /   8.5 MiB (100 %)   1.1 MiB/s ETA:   0 s                
-info: installing component 'rustc'
-info: installing component 'rust-std'
+ 16.7 MiB /  16.7 MiB (100 %)   4.5 MiB/s in  3s ETA:  0s
+info: downloading component 'rust-std'
+ 21.9 MiB /  21.9 MiB (100 %)   6.0 MiB/s in  4s ETA:  0s
+info: downloading component 'rustc'
+ 50.1 MiB /  50.1 MiB (100 %)   8.7 MiB/s in  6s ETA:  0s
+info: downloading component 'rustfmt'
 info: installing component 'cargo'
+info: installing component 'clippy'
 info: installing component 'rust-docs'
-info: default toolchain set to 'stable'
+ 16.7 MiB /  16.7 MiB (100 %)  12.6 MiB/s in  1s ETA:  0s
+info: installing component 'rust-std'
+ 21.9 MiB /  21.9 MiB (100 %)  16.0 MiB/s in  1s ETA:  0s
+info: installing component 'rustc'
+ 50.1 MiB /  50.1 MiB (100 %)  17.8 MiB/s in  2s ETA:  0s
+info: installing component 'rustfmt'
+info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
 
-  stable installed - rustc 1.33.0 (2aa4c46cf 2019-02-28)
+  stable-x86_64-unknown-linux-gnu installed - rustc 1.54.0 (a178d0322 2021-07-26)
 
 
 Rust is installed now. Great!
 
-To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH 
-environment variable. Next time you log in this will be done automatically.
+To get started you may need to restart your current shell.
+This would reload your PATH environment variable to include
+Cargo's bin directory ($HOME/.cargo/bin).
 
-To configure your current shell run source $HOME/.cargo/env
-
+To configure your current shell, run:
+source $HOME/.cargo/env
 ```
 
-此时安装程序已经修改了 `~/.profile` 文件，加入了下面这行内容：
 
-```bash
-export PATH="$HOME/.cargo/bin:$PATH"
-```
-
-这个设置会在下次登录之后自动生效，如果不想重新登录而立即生效，只需要在终端执行命令 `source $HOME/.cargo/env` 即可。
+如果不想重新登录而立即生效，只需要在终端执行命令 `source $HOME/.cargo/env` 即可。
 
 验证安装：
 
 ```bash
-$ rustc --version
-rustc 1.52.1 (9bc8c42bb 2021-05-09)
+rustc --version
+rustc 1.54.0 (a178d0322 2021-07-26)
 ```
-
-### Openssl问题
-
-如果compile时报错，找不到openssl：
-
-```bash
-cargo:rerun-if-env-changed=OPENSSL_DIR
-run pkg_config fail: "`\"pkg-config\" \"--libs\" \"--cflags\" \"openssl\"` did not exit successfully: exit code: 1\n--- stderr\nPackage openssl was not found in the pkg-config search path.\nPerhaps you should add the directory containing `openssl.pc\'\nto the PKG_CONFIG_PATH environment variable\nNo package \'openssl\' found\n"
-```
-
-执行下列命令即可：
-
-```bash
-sudo apt-get install pkg-config libssl-dev
-```
-
-如果，上述安装命令遇到404错误：
-
-```bash
-错误:1 http://security.ubuntu.com/ubuntu xenial-security/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.14
-  404  Not Found
-```
-
-需要先执行 `sudo apt update` 命令，具体解释参考：
-
-https://askubuntu.com/questions/903496/error-during-upgrade-on-ubuntu-16-04
 
 ### 配置cargo
 
