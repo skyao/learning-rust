@@ -7,9 +7,5 @@ description: >
   Rust Module
 ---
 
-TODO
 
-- mod
-- crate
-- lib.rs
 
