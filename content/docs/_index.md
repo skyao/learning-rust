@@ -6,11 +6,8 @@ date: 2021-03-29
 menu:
   main:
     weight: 20
+    pre: <i class='fas fa-book'></i>
 ---
-
-{{% pageinfo %}}
-介绍Rust学习笔记的基本资料和访问方式
-{{% /pageinfo %}}
 
 
 

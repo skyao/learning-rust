@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Rust标准库学习"
-linkTitle: "标准库"
+title: "Rust核心库学习"
+linkTitle: "核心库"
 weight: 1
 date: 2021-11-29
 menu:
@@ -13,7 +13,7 @@ cascade:
 ---
 
 {{% pageinfo %}}
-Rust标准库学习
+Rust核心库学习
 {{% /pageinfo %}}
 
 
