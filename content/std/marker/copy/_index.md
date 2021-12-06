@@ -4,6 +4,6 @@ linkTitle: "Copy trait"
 weight: 1330
 date: 2021-12-01
 description: >
-  Rust标准库中的Copy trait
+  只需复制位即可复制其值的类型。
 ---
 

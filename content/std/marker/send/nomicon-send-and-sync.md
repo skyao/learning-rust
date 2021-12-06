@@ -155,3 +155,46 @@ impl<T> DerefMut for Carton<T> {
 
 最后，让我们考虑一下我们的Carton是否是Send和Sync。有些东西可以安全地成为 "Send"，除非它与其他东西共享可变的状态而不对其进行排他性访问。每个Carton都有一个唯一的指针，所以我们很好。
 
+```rust
+// Safety: No one besides us has the raw pointer, so we can safely transfer the
+// Carton to another thread if T can be safely transferred.
+unsafe impl<T> Send for Carton<T> where T: Send {}
+```
+
+Sync如何？为了使Carton同步，我们必须强制规定，你不能写到存储在一个 `&Carton` 中的东西，而这个东西可以从另一个 `&Carton中` 读到或写入。由于你需要一个 `&mut Carton` 来写入指针，并且 borrow 检查器强制要求可变引用必须是独占的，所以Carton也不存在健全性问题，可以同步。
+
+```rust
+// Safety: Since there exists a public way to go from a `&Carton<T>` to a `&T`
+// in an unsynchronized fashion (such as `Deref`), then `Carton<T>` can't be
+// `Sync` if `T` isn't.
+// Conversely, `Carton` itself does not use any interior mutability whatsoever:
+// all the mutations are performed through an exclusive reference (`&mut`). This
+// means it suffices that `T` be `Sync` for `Carton<T>` to be `Sync`:
+unsafe impl<T> Sync for Carton<T> where T: Sync  {}
+```
+
+当我们断言我们的类型是Send and Sync时，我们通常需要强制要求每个包含的类型都是Send and Sync。当编写行为像标准库类型的自定义类型时，我们可以断言我们有同样的要求。例如，下面的代码断言，如果同类型的Box是Send，那么Carton就是Send，在这种情况下，这就等于说T是Send。
+
+```rust
+unsafe impl<T> Send for Carton<T> where Box<T>: Send {}
+```
+
+现在，Carton<T>有一个内存泄漏，因为它从不释放它分配的内存。一旦我们解决了这个问题，我们就必须确保满足一个新的要求：我们需要知道free可以在一个指针上被调用，而这个指针是由另一个线程分配的。我们可以在libc::free的文档中检查这一点是否正确。
+
+```rust
+impl<T> Drop for Carton<T> {
+    fn drop(&mut self) {
+        unsafe {
+            libc::free(self.0.as_ptr().cast());
+        }
+    }
+}
+```
+
+一个不发生这种情况的好例子是MutexGuard：注意它不是Send。MutexGuard的实现使用了一些库，这些库要求你确保你不会试图释放你在不同线程中获得的锁。如果你能够将MutexGuard发送到另一个线程，那么析构器就会在你发送它的线程中运行，这就违反了要求。MutexGuard仍然可以被同步，因为你能发送给另一个线程的只是一个&MutexGuard，而丢弃一个引用什么也做不了。
+
+TODO：更好地解释什么可以或不可以是Send或Sync。仅仅针对数据竞赛就足够了吗？
+
+
+
+> 备注: 没看懂。。。

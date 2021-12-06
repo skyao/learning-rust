@@ -4,6 +4,6 @@ linkTitle: "Sync trait"
 weight: 1350
 date: 2021-12-01
 description: >
-  Rust标准库中的Sync trait
+  可以在线程之间安全共享引用的类型。
 ---
 
