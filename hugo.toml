@@ -163,6 +163,13 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 [params.ui.readingtime]
 enable = false
 
+[params.plantuml]
+enable = true
+theme = "default"
+#Set url to plantuml server 
+#default is http://www.plantuml.com/plantuml/svg/
+svg_image_url = "https://www.plantuml.com/plantuml/svg/"
+
 # hugo module configuration
 
 [module]
