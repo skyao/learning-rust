@@ -11,8 +11,8 @@ Edition Guide 官方英文版本：
 
 https://doc.rust-lang.org/edition-guide/
 
-中文翻译版本：
+中文翻译版本(已经不可访问）：
 
-https://erasin.wang/books/edition-guide-cn/
+~~https://erasin.wang/books/edition-guide-cn/~~
 
 补充说明：信息量很大。
