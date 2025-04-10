@@ -72,7 +72,7 @@ nexus 支持 cargo 的代理， 具体可以参考：
 最后再创建一个 cargo group 仓库， 名为 `cargo-all`， 将上面两个仓库添加进去，顺序为：
 
 - cargo-hosted
-- cargo-proxy-ustc
+- cargo-proxy-cratesio
 
 ### 配置 cargo 使用 nexus 代理源
 
@@ -84,7 +84,7 @@ vi ~/.cargo/config
 
 ```properties
 [registries.nexus]
-index = "sparse+http://192.168.0.246:8081/repository/cargo-proxy-cratesio/"
+index = "sparse+http://192.168.0.246:8081/repository/cargo-proxy-all/"
 
 [registry]
 default = "nexus"
@@ -93,7 +93,7 @@ default = "nexus"
 replace-with = "nexus"
 
 [source.nexus]
-registry = "sparse+http://192.168.0.246:8081/repository/cargo-proxy-cratesio/"
+registry = "sparse+http://192.168.0.246:8081/repository/cargo-proxy-all/"
 ```
 
 参考：
@@ -116,7 +116,7 @@ body:
 
 ## 验证构建
 
-### 构建 linkerd2-proxy
+### 验证 cargo proxy 仓库
 
 尝试构建 linkerd2-proxy， 验证是否能正常构建：
 
@@ -139,7 +139,7 @@ cargo build
 
 ![](images/cargo-proxy.png)
 
-### 清理 cache 和 index
+#### 清理 cache 和 index
 
 为了多次验证， 需要清理 cache 和 index：
 
@@ -170,6 +170,16 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # 重新初始化 Cargo
 rustup update
 ```
+
+### 验证 cargo hosted 仓库
+
+验证 cargo hosted 仓库是否能正常构建：
+
+```bash
+cargo publish
+```
+
+TODO：稍后再验证吧，好像一般也很少需要使用 cargo hosted 仓库。
 
 
 
