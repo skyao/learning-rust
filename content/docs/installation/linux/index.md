@@ -1,10 +1,10 @@
 ---
-title: " Linux&Mac安装"
-linkTitle: " Linux&Mac安装"
-date: 2021-03-29
-weight: 201
+title: "Linux 安装"
+linkTitle: "Linux"
+date: 2025-04-09
+weight: 10
 description: >
-  在Linux和Mac上安装Rust
+  在 Linux 上安装 Rust
 ---
 
 ### 安装
@@ -18,7 +18,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 然后依照屏幕提示：
 
 ```bash
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 info: downloading installer
 
 Welcome to Rust!
@@ -33,7 +32,7 @@ home directory, located at:
 
 This can be modified with the RUSTUP_HOME environment variable.
 
-The Cargo home directory located at:
+The Cargo home directory is located at:
 
   /home/sky/.cargo
 
@@ -62,10 +61,10 @@ Current installation options:
                profile: default
   modify PATH variable: yes
 
-1) Proceed with installation (default)
+1) Proceed with standard installation (default - just press enter)
 2) Customize installation
 3) Cancel installation
->1
+>
 ```
 
 这里选择1默认模式，继续：
@@ -74,28 +73,26 @@ Current installation options:
 info: profile set to 'default'
 info: default host triple is x86_64-unknown-linux-gnu
 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
-info: latest update on 2021-07-29, rust version 1.54.0 (a178d0322 2021-07-26)
+info: latest update on 2025-04-03, rust version 1.86.0 (05f9846f8 2025-03-31)
 info: downloading component 'cargo'
 info: downloading component 'clippy'
 info: downloading component 'rust-docs'
- 16.7 MiB /  16.7 MiB (100 %)   4.5 MiB/s in  3s ETA:  0s
 info: downloading component 'rust-std'
- 21.9 MiB /  21.9 MiB (100 %)   6.0 MiB/s in  4s ETA:  0s
 info: downloading component 'rustc'
- 50.1 MiB /  50.1 MiB (100 %)   8.7 MiB/s in  6s ETA:  0s
+ 72.8 MiB /  72.8 MiB (100 %)  31.1 MiB/s in  1s         
 info: downloading component 'rustfmt'
 info: installing component 'cargo'
 info: installing component 'clippy'
 info: installing component 'rust-docs'
- 16.7 MiB /  16.7 MiB (100 %)  12.6 MiB/s in  1s ETA:  0s
+ 21.2 MiB /  21.2 MiB (100 %)  10.2 MiB/s in  2s         
 info: installing component 'rust-std'
- 21.9 MiB /  21.9 MiB (100 %)  16.0 MiB/s in  1s ETA:  0s
+ 27.1 MiB /  27.1 MiB (100 %)  11.6 MiB/s in  2s         
 info: installing component 'rustc'
- 50.1 MiB /  50.1 MiB (100 %)  17.8 MiB/s in  2s ETA:  0s
+ 72.8 MiB /  72.8 MiB (100 %)  13.1 MiB/s in  5s         
 info: installing component 'rustfmt'
 info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
 
-  stable-x86_64-unknown-linux-gnu installed - rustc 1.54.0 (a178d0322 2021-07-26)
+  stable-x86_64-unknown-linux-gnu installed - rustc 1.86.0 (05f9846f8 2025-03-31)
 
 
 Rust is installed now. Great!
@@ -104,18 +101,37 @@ To get started you may need to restart your current shell.
 This would reload your PATH environment variable to include
 Cargo's bin directory ($HOME/.cargo/bin).
 
-To configure your current shell, run:
-source $HOME/.cargo/env
+To configure your current shell, you need to source
+the corresponding env file under $HOME/.cargo.
+
+This is usually done by running one of the following (note the leading DOT):
+. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
+source "$HOME/.cargo/env.fish"  # For fish
+source "$HOME/.cargo/env.nu"    # For nushell
 ```
 
+```bash
+vi ~/.zshrc
+```
 
-如果不想重新登录而立即生效，只需要在终端执行命令 `source $HOME/.cargo/env` 即可。
+在文件末尾加入：
+
+```bash
+# rust
+. "$HOME/.cargo/env"
+```
+
+保存退出， 重新登录， 或者执行命令：
+
+```bash
+source $HOME/.cargo/env
+```
 
 验证安装：
 
 ```bash
-rustc --version
-rustc 1.54.0 (a178d0322 2021-07-26)
+$ rustc --version
+rustc 1.86.0 (05f9846f8 2025-03-31)
 ```
 
 ### 配置cargo

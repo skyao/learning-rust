@@ -1,10 +1,10 @@
 ---
-title: "  Windows安装"
-linkTitle: "  Windows安装"
-date: 2021-03-29
-weight: 202
+title: "Windows 安装"
+linkTitle: "Windows"
+date: 2025-04-09
+weight: 20
 description: >
-  在Windows上安装Rust
+  在 Windows 上安装 Rust
 ---
 
 ### 安装vs2015

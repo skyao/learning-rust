@@ -1,10 +1,10 @@
 ---
-title: "Rust版本升级"
+title: "Rust 版本升级"
 linkTitle: "版本升级"
-date: 2021-03-29
-weight: 202
+date: 2025-04-09
+weight: 30
 description: >
-  升级Rust版本
+  升级 Rust 的版本
 ---
 
 ### 官方方式
