@@ -67,11 +67,11 @@ nexus 支持 cargo 的代理， 具体可以参考：
 
 再创建一个 cargo hosted 仓库
 
-- cargo-hosted
+- cargo-private
 
-最后再创建一个 cargo group 仓库， 名为 `cargo-all`， 将上面两个仓库添加进去，顺序为：
+最后再创建一个 cargo group 仓库， 名为 `cargo-public`， 将上面两个仓库添加进去，顺序为：
 
-- cargo-hosted
+- cargo-private
 - cargo-proxy-cratesio
 
 ### 配置 cargo 使用 nexus 代理源
@@ -84,7 +84,7 @@ vi ~/.cargo/config
 
 ```properties
 [registries.nexus]
-index = "sparse+http://192.168.0.246:8081/repository/cargo-proxy-all/"
+index = "sparse+http://192.168.3.91:8081/repository/cargo-public/"
 
 [registry]
 default = "nexus"
@@ -93,26 +93,39 @@ default = "nexus"
 replace-with = "nexus"
 
 [source.nexus]
-registry = "sparse+http://192.168.0.246:8081/repository/cargo-proxy-all/"
+registry = "sparse+http://192.168.3.91:8081/repository/cargo-public/"
 ```
 
 参考：
 
 - [Nexus proxy repository for Cargo/Rust](https://gist.github.com/mashintsev/3e6ab7840d6233ab7932565d056b8158)
 
-### 现有问题
+## 现有问题
+
+### 不能代理国内源
 
 但这里有个问题，就是 cargo proxy 仓库只能代理官方仓库 https://index.crates.io， 而不能代理国内的源， 
 
 会报错：
 
 ```bash
-warning: spurious network error (2 tries remaining): failed to get successful HTTP response from `http://192.168.0.246:8081/repository/cargo-proxy-ustc/crates/async-recursion/1.1.1/download` (192.168.0.246), got 500
+warning: spurious network error (2 tries remaining): failed to get successful HTTP response from `http://192.168.3.91:8081/repository/cargo-proxy-ustc/crates/async-recursion/1.1.1/download` (192.168.0.246), got 500
 body:
 ```
 
 暂时没有找到解决办法， 所以只能使用官方仓库作为 cargo proxy 仓库的上游源头。
 
+### cargo hosted 和 cargo group 仓库报错
+
+cargo hosted 和 cargo group 仓库在创建后报错， 具体报错信息如下：
+
+```bash
+400 bad request
+```
+
+这个事情比较诡异，因为我第一次操作时，功能都正常。但是，我之后把测试用的那台虚拟机删除，再正式创建时，就怎么都报错 400 bad request。用了很长时间排查也未来找到原因。
+
+最后， 暂时只能重新创建 cargo proxy 仓库， 重新配置 cargo 使用 cargo proxy 仓库， 先不使用 cargo hosted 和 cargo group 仓库。
 
 ## 验证构建
 
@@ -121,6 +134,9 @@ body:
 尝试构建 linkerd2-proxy， 验证是否能正常构建：
 
 ```bash
+mkdir -p ~/work/code/temp/rust-demo
+cd ~/work/code/temp/rust-demo
+
 git clone https://github.com/linkerd/linkerd2-proxy.git
 cd linkerd2-proxy
 
