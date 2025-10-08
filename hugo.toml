@@ -84,7 +84,7 @@ time_format_blog = "2006.01.02"
 section = ["HTML", "print", "RSS"]
 
 [params]
-copyright = "skyao.io"
+copyright = "skyao.net"
 privacy_policy = ""
 
 # First one is picked as the Twitter card image if not set on page.
@@ -106,7 +106,7 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://skyao.io/learning-rust"
+url_latest_version = "https://skyao.net/learning-rust"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/skyao/learning-rust"
