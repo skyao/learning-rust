@@ -1,7 +1,7 @@
 ---
 title: "cargo 设置"
 linkTitle: "cargo"
-date: 2025-04-09
+date: 2025-11-04
 weight: 40
 description: >
   为 Rust 配置 cargo

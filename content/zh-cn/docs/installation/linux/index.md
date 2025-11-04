@@ -73,26 +73,27 @@ Current installation options:
 info: profile set to 'default'
 info: default host triple is x86_64-unknown-linux-gnu
 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
-info: latest update on 2025-04-03, rust version 1.86.0 (05f9846f8 2025-03-31)
+info: latest update on 2025-10-30, rust version 1.91.0 (f8297e351 2025-10-28)
 info: downloading component 'cargo'
 info: downloading component 'clippy'
 info: downloading component 'rust-docs'
+ 20.4 MiB /  20.4 MiB (100 %)  12.2 MiB/s in  1s         
 info: downloading component 'rust-std'
+ 27.9 MiB /  27.9 MiB (100 %)  13.8 MiB/s in  2s         
 info: downloading component 'rustc'
- 72.8 MiB /  72.8 MiB (100 %)  31.1 MiB/s in  1s         
+ 74.5 MiB /  74.5 MiB (100 %)  17.2 MiB/s in  4s         
 info: downloading component 'rustfmt'
 info: installing component 'cargo'
 info: installing component 'clippy'
 info: installing component 'rust-docs'
- 21.2 MiB /  21.2 MiB (100 %)  10.2 MiB/s in  2s         
 info: installing component 'rust-std'
- 27.1 MiB /  27.1 MiB (100 %)  11.6 MiB/s in  2s         
+ 27.9 MiB /  27.9 MiB (100 %)  24.1 MiB/s in  1s         
 info: installing component 'rustc'
- 72.8 MiB /  72.8 MiB (100 %)  13.1 MiB/s in  5s         
+ 74.5 MiB /  74.5 MiB (100 %)  25.5 MiB/s in  2s         
 info: installing component 'rustfmt'
 info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
 
-  stable-x86_64-unknown-linux-gnu installed - rustc 1.86.0 (05f9846f8 2025-03-31)
+  stable-x86_64-unknown-linux-gnu installed - rustc 1.91.0 (f8297e351 2025-10-28)
 
 
 Rust is installed now. Great!
@@ -107,7 +108,7 @@ the corresponding env file under $HOME/.cargo.
 This is usually done by running one of the following (note the leading DOT):
 . "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
 source "$HOME/.cargo/env.fish"  # For fish
-source "$HOME/.cargo/env.nu"    # For nushell
+source $"($nu.home-path)/.cargo/env.nu"  # For nushell
 ```
 
 ```bash
@@ -131,22 +132,5 @@ source $HOME/.cargo/env
 
 ```bash
 $ rustc --version
-rustc 1.86.0 (05f9846f8 2025-03-31)
+rustc 1.91.0 (f8297e351 2025-10-28)
 ```
-
-### 配置cargo
-
-打开（或创建）文件  `~/.cargo/config`，加入以下内容：
-
-```properties
-[source.crates-io]
-registry = "https://github.com/rust-lang/crates.io-index"
-replace-with = 'ustc'
-
-[source.ustc]
-registry = "git://mirrors.ustc.edu.cn/crates.io-index"
-```
-
-参考：
-
-- [rust - How do I debug `cargo build` hanging at "Updating crates.io index"? - Stack Overflow](https://stackoverflow.com/questions/53361052/how-do-i-debug-cargo-build-hanging-at-updating-crates-io-index)
