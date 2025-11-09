@@ -84,7 +84,7 @@ vi ~/.cargo/config
 
 ```properties
 [registries.nexus]
-index = "sparse+http://192.168.3.91:8081/repository/cargo-public/"
+index = "sparse+http://192.168.3.193:8081/repository/cargo-public/"
 
 [registry]
 default = "nexus"
@@ -93,7 +93,7 @@ default = "nexus"
 replace-with = "nexus"
 
 [source.nexus]
-registry = "sparse+http://192.168.3.91:8081/repository/cargo-public/"
+registry = "sparse+http://192.168.3.193:8081/repository/cargo-public/"
 ```
 
 参考：
@@ -109,7 +109,7 @@ registry = "sparse+http://192.168.3.91:8081/repository/cargo-public/"
 会报错：
 
 ```bash
-warning: spurious network error (2 tries remaining): failed to get successful HTTP response from `http://192.168.3.91:8081/repository/cargo-proxy-ustc/crates/async-recursion/1.1.1/download` (192.168.0.246), got 500
+warning: spurious network error (2 tries remaining): failed to get successful HTTP response from `http://192.168.3.193:8081/repository/cargo-proxy-ustc/crates/async-recursion/1.1.1/download` (192.168.0.246), got 500
 body:
 ```
 
